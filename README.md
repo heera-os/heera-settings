@@ -1,6 +1,6 @@
 # Heera Settings
 
-The System Settings application for Heera Desktop.
+The System Settings application for Heera Desktop.clone of https://github.com/cyberos/cyber-settings
 
 
 ## Dependencies
