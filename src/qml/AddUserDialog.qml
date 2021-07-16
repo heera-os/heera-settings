@@ -1,0 +1,119 @@
+import QtQuick 2.12
+import QtQuick.Controls 2.12
+import QtQuick.Layouts 1.12
+import HeeraUI 1.0 as HeeraUI
+import Heera.Settings 1.0
+import Heera.Accounts 1.0
+
+Dialog {
+    id: control
+
+    // parent: rootWindow
+    x: (parent.width - width) / 2
+    y: (parent.height - height) / 2
+    modal: true
+    padding: HeeraUI.Units.largeSpacing * 2
+
+    onRejected: clear()
+
+    AccountsManager {
+        id: manager
+
+        onUserAdded: {
+            if (account.userName === userNameField.text) {
+                account.passwordMode = UserAccount.RegularPasswordMode;
+                account.setPassword(Password.cryptPassword(passwordField.text));
+
+                control.clear()
+            }
+        }
+    }
+
+    onVisibleChanged: {
+        if (visible)
+            userNameField.forceActiveFocus()
+    }
+
+    function clear() {
+        userNameField.clear()
+        passwordField.clear()
+        verifyPasswordField.clear()
+        accountTypeCombo.currentIndex = 0
+    }
+
+    footer: DialogButtonBox {
+        padding: HeeraUI.Units.largeSpacing * 2
+        Button {
+            id: addButton
+            text: qsTr("Add")
+            enabled: userNameField.text != "" &&
+                     passwordField.text != "" &&
+                     passwordField.text == verifyPasswordField.text
+            DialogButtonBox.buttonRole: DialogButtonBox.Ok
+            onClicked: {
+                if (manager.createUser(userNameField.text, "", accountTypeCombo.currentIndex))
+                    control.accept()
+            }
+        }
+
+        Button {
+            id: cancelButton
+            text: qsTr("Cancel")
+            DialogButtonBox.buttonRole: DialogButtonBox.Cancel
+            onClicked: control.reject()
+        }
+    }
+
+    ColumnLayout {
+        GridLayout {
+            columns: 2
+            columnSpacing: HeeraUI.Units.largeSpacing
+            rowSpacing: HeeraUI.Units.smallSpacing
+
+            Label {
+                text: qsTr("User name")
+            }
+
+            TextField {
+                id: userNameField
+                placeholderText: qsTr("User name")
+                Layout.fillWidth: true
+                selectByMouse: true
+            }
+
+            Label {
+                text: qsTr("Password")
+            }
+
+            TextField {
+                id: passwordField
+                placeholderText: qsTr("Password")
+                echoMode: TextField.Password
+                Layout.fillWidth: true
+                selectByMouse: true
+            }
+
+            Label {
+                text: qsTr("Verify password")
+            }
+
+            TextField {
+                id: verifyPasswordField
+                placeholderText: qsTr("Verify password")
+                echoMode: TextField.Password
+                Layout.fillWidth: true
+                selectByMouse: true
+            }
+
+            Label {
+                text: qsTr("Account type")
+            }
+
+            ComboBox {
+                id: accountTypeCombo
+                model: [qsTr("Standard"), qsTr("Administrator")]
+                Layout.fillWidth: true
+            }
+        }
+    }
+}
