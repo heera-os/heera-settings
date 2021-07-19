@@ -85,13 +85,18 @@ ItemPage {
                 }
 
                 StandardItem {
-                    key: "devloper1"
-                    value: "@devloper1"
+                    key: "Aditya Gupta"
+                    value: "twitter@AdityaGupta150"
                 }
 
                 StandardItem {
-                    key: "devloper2"
-                    value: "@devloper2"
+                    key: "Rajan Pandey"
+                    value: "pandey11rajan@gmail.com"
+                }
+                
+                StandardItem {
+                    key: "Khumnath"
+                    value: "twitter@khumnath"
                 }
 
             }
