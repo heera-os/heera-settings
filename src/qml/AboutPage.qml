@@ -29,7 +29,7 @@ ItemPage {
 
             Label {
                 Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
-                text: "Heera Desktop 0.1"
+                text: "Heera Desktop v1.0"
                 font.pointSize: 24
                 font.bold: true
                 bottomPadding: HeeraUI.Units.largeSpacing * 2
