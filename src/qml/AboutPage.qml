@@ -21,7 +21,7 @@ ItemPage {
 
             Image {
                 Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
-                width: 128
+                width: 110
                 height: width
                 sourceSize: Qt.size(width, height)
                 source: "qrc:/images/logo.svg"
@@ -30,9 +30,8 @@ ItemPage {
             Label {
                 Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
                 text: "Heera Desktop v1.0"
-                font.pointSize: 24
+                font.pointSize: 16
                 font.bold: true
-                bottomPadding: HeeraUI.Units.largeSpacing * 2
                 leftPadding: HeeraUI.Units.largeSpacing * 2
                 rightPadding: HeeraUI.Units.largeSpacing * 2
             }
@@ -41,7 +40,7 @@ ItemPage {
                 Label {
                     text: qsTr("System Information")
                     color: HeeraUI.Theme.disabledTextColor
-                    bottomPadding: HeeraUI.Units.smallSpacing
+
                 }
 
                 StandardItem {

@@ -32,14 +32,14 @@ Item {
             title: qsTr("Accounts")
             name: "accounts"
             page: "qrc:/qml/AccountsPage.qml"
-            iconSource: "image://icontheme/avatar-default-symbolic"
+            iconSource: "image://icontheme/folder-image-people-symbolic"
         }
 
         ListElement {
             title: qsTr("Display")
             name: "display"
             page: "qrc:/qml/DisplayPage.qml"
-            iconSource: "image://icontheme/display"
+            iconSource: "image://icontheme/computer-symbolic"
         }
 
         ListElement {
@@ -60,7 +60,7 @@ Item {
             title: qsTr("Wallpaper")
             name: "wallpaper"
             page: "qrc:/qml/BackgroundPage.qml"
-            iconSource: "image://icontheme/cs-backgrounds-symbolic"
+            iconSource: "image://icontheme/preferences-desktop-wallpaper-symbolic"
         }
 
         ListElement {
@@ -81,14 +81,14 @@ Item {
             title: qsTr("Battery")
             name: "battery"
             page: "qrc:/qml/BatteryPage.qml"
-            iconSource: "image://icontheme/battery-full-symbolic"
+            iconSource: "image://icontheme/battery-symbolic"
         }
 
         ListElement {
             title: qsTr("About")
             name: "about"
             page: "qrc:/qml/AboutPage.qml"
-            iconSource: "image://icontheme/dialog-information-symbolic"
+            iconSource: "image://icontheme/preferences-system-details-symbolic"
         }
     }
 
@@ -114,8 +114,7 @@ Item {
                 id: item
                 implicitWidth: listView.width
                 implicitHeight: 48
-
-                property bool isCurrent: listView.currentIndex === index
+                property bool isCurrent: listView.currentIndex == index
 
                 Rectangle {
                     anchors.fill: parent

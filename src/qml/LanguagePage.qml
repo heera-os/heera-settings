@@ -35,7 +35,7 @@ ItemPage {
             ScrollBar.vertical: ScrollBar {}
 
             delegate: MouseArea {
-                property bool isSelected: index == listView.currentIndex
+                property bool isSelected: index === listView.currentIndex
 
                 id: item
                 width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin

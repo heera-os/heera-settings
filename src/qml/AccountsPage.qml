@@ -61,7 +61,7 @@ ItemPage {
                         width: 64
                         height: width
                         sourceSize: Qt.size(width, height)
-                        source: currentUser.iconFileName ? "file://" + currentUser.iconFileName : "image://icontheme/avatar-default-symbolic"
+                        source: currentUser.iconFileName ? "file://" + currentUser.iconFileName : "image://icontheme/folder-image-people-symbolic"
                         asynchronous: true
                         fillMode: Image.PreserveAspectCrop
                         cache: false
@@ -201,7 +201,7 @@ ItemPage {
                                 width: 64
                                 height: width
                                 sourceSize: Qt.size(width, height)
-                                source: iconFileName ? "file:///" + iconFileName : "image://icontheme/default-user"
+                                source: iconFileName ? "file:///" + iconFileName : "image://icontheme/user-icon-symbolic"
                                 visible: status === Image.Ready
 
                                 layer.enabled: true

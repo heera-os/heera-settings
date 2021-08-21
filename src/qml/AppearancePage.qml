@@ -54,7 +54,7 @@ ItemPage {
 
                 // Light Mode and Dark Mode
                 RowLayout {
-                    spacing: HeeraUI.Units.largeSpacing * 2
+                    spacing: HeeraUI.Units.largeSpacing
 
                     IconCheckBox {
                         source: "qrc:/images/light_mode.svg"
@@ -105,7 +105,7 @@ ItemPage {
                 }
 
                 GridView {
-                    height: 32 + HeeraUI.Units.largeSpacing * 2
+                    height: 25 + HeeraUI.Units.largeSpacing * 2
                     Layout.fillWidth: true
                     cellWidth: height
                     cellHeight: height
@@ -124,7 +124,7 @@ ItemPage {
                     delegate: Rectangle {
                         property bool isSelected: Qt.colorEqual(HeeraUI.Theme.highlightColor, accentColor)
 
-                        width: 32 + HeeraUI.Units.largeSpacing * 2
+                        width: 25 + HeeraUI.Units.largeSpacing * 2
                         height: width
                         color: "transparent"
                         radius: width / 2
@@ -135,7 +135,7 @@ ItemPage {
                             HeeraUI.Theme.darkMode ? 0.5 : 0.7
                         )
 
-                        border.width: isSelected ? 4 : 0
+                        border.width: isSelected ? 2.5 : 0
                         Behavior on border.width {
                             NumberAnimation {
                                 duration: 125
@@ -147,7 +147,7 @@ ItemPage {
                         Rectangle {
                             id: _rect2
                             color: accentColor
-                            width: 32
+                            width: 20
                             height: width
                             anchors.centerIn: parent
                             radius: width / 2
@@ -166,7 +166,7 @@ ItemPage {
                 Label {
                     text: qsTr("Font")
                     color: HeeraUI.Theme.disabledTextColor
-                    Layout.bottomMargin: HeeraUI.Units.largeSpacing
+                    Layout.bottomMargin: HeeraUI.Units.largeSpacing * 0.8
                 }
 
                 GridLayout {

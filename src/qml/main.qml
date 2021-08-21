@@ -10,12 +10,12 @@ HeeraUI.Window {
     title: qsTr("Settings")
     visible: true
     width: 950
-    height: 650
+    height: 710
     backgroundColor: HeeraUI.Theme.secondaryBackgroundColor
 
-    minimumWidth: 900
-    minimumHeight: 600
-    headerBarHeight: 50
+    minimumWidth: 920
+    minimumHeight: 710
+    headerBarHeight: 40
 
     headerBar: Item {
         Rectangle {

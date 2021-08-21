@@ -7,7 +7,7 @@ import HeeraUI 1.0 as HeeraUI
 Item {
     id: control
 
-    property var iconSpacing: HeeraUI.Units.smallSpacing * 0.8
+    property real iconSpacing: HeeraUI.Units.smallSpacing * 0.8
     property alias source: icon.source
     property alias text: label.text
     property bool checked: false
@@ -24,7 +24,7 @@ Item {
         Rectangle {
             id: _box
             width: 128
-            height: width
+            height: 75
             color: "transparent"
             border.width: 3
             border.color: control.checked ? HeeraUI.Theme.highlightColor : "transparent"

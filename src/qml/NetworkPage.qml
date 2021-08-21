@@ -10,8 +10,8 @@ ItemPage {
     id: control
     headerTitle: qsTr("Network")
 
-    property var itemHeight: 50
-    property var settingsMap: ({})
+    property real itemHeight: 50
+    property real settingsMap: ({})
 
     NM.Networking {
         id: networking

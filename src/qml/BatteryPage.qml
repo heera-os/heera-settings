@@ -40,7 +40,7 @@ ItemPage {
                 Layout.fillWidth: true
                 Layout.bottomMargin: HeeraUI.Units.largeSpacing
                 enableAnimation: !battery.onBattery
-                height: 150
+                height: 55
 
                 ColumnLayout {
                     anchors.fill: parent
@@ -55,7 +55,7 @@ ItemPage {
                             id: percentLabel
                             text: battery.chargePercent
                             color: "white"
-                            font.pointSize: 40
+                            font.pointSize: 25
                         }
 
                         Label {
@@ -67,18 +67,19 @@ ItemPage {
 
                         Image {
                             id: sensorsVoltage
-                            width: 30
+                            width: 22
                             height: width
                             sourceSize: Qt.size(width, height)
                             source: "qrc:/images/sensors-voltage-symbolic.svg"
                             visible: !battery.onBattery
                         }
+                        Label {
+                            text: battery.statusString
+                            color: "white"
+                        }
+
                     }
 
-                    Label {
-                        text: battery.statusString
-                        color: "white"
-                    }
 
                     Item {
                         Layout.fillHeight: true
@@ -99,7 +100,7 @@ ItemPage {
                 Canvas {
                     id: canvas
                     Layout.fillWidth: true
-                    height: 300
+                    height: 200
 
                     // Refer to the code of ubuntu touch.
                     onPaint: {
@@ -155,7 +156,7 @@ ItemPage {
                         for (var i = 1; i < chargeDatas.length; i++) {
                             /* when device is power cycled, value will drop to 0 regardless of the battery state
                                this purposefully ignores any values that are 0 to stop the spikes */
-                            if (chargeDatas[i].value == 0)
+                            if (chargeDatas[i].value === 0)
                                 continue;
                             
                             ctx.lineTo((86400-chargeDatas[i].time) / 86400 * width,

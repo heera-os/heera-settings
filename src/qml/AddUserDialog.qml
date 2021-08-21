@@ -2,7 +2,6 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import HeeraUI 1.0 as HeeraUI
-import Heera.Settings 1.0
 import Heera.Accounts 1.0
 
 Dialog {
